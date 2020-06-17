@@ -7,26 +7,70 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btRxjava2"
+        android:id="@+id/btZipRxjava2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rxjava2请求"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
+        android:text="Rxjava2 Zip请求"
+        app:layout_constraintBottom_toTopOf="@+id/btMergeRxjava2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btMergeRxjava2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rxjava2_Merge请求"
+        app:layout_constraintBottom_toTopOf="@+id/btFlatmapRxjava2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btZipRxjava2" />
+
+    <Button
+        android:id="@+id/btFlatmapRxjava2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rxjava2_Flatmap请求"
+        app:layout_constraintBottom_toTopOf="@+id/btFlatmap2Rxjava2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btMergeRxjava2" />
+
+
+    <Button
+        android:id="@+id/btFlatmap2Rxjava2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rxjava2_Flatmap多个请求"
+        app:layout_constraintBottom_toTopOf="@+id/btCoroutines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btFlatmapRxjava2" />
 
     <Button
         android:id="@+id/btCoroutines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="携程请求"
-        app:layout_constraintBottom_toTopOf="@+id/btRxjava2"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        android:text="协程请求"
+        app:layout_constraintBottom_toTopOf="@+id/btContinueCoroutines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btFlatmap2Rxjava2" />
+
+    <Button
+        android:id="@+id/btContinueCoroutines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="协程连续请求"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btCoroutines" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

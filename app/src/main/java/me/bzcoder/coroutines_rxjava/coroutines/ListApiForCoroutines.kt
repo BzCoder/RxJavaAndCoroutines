@@ -1,8 +1,10 @@
 package me.bzcoder.coroutines_rxjava.coroutines
 
-import io.reactivex.Observable
-import me.bzcoder.coroutines_rxjava.ProjectTypeEntity
+import me.bzcoder.coroutines_rxjava.entity.ProjectListEntity
+import me.bzcoder.coroutines_rxjava.entity.ProjectTypeEntity
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 /**
@@ -14,4 +16,13 @@ interface ListApiForCoroutines {
 
     @GET("project/tree/json")
     suspend fun getProjectList(): ProjectTypeEntity
+
+    //https://www.wanandroid.com/project/list/1/json?cid=294
+    @GET("project/list/{page}/json")
+    suspend fun getProjectListDetail(
+        @Path("page") page: Int,
+        @Query("cid") cid: String
+    ): ProjectListEntity
+
+
 }

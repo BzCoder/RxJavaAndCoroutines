@@ -1,4 +1,4 @@
-package me.bzcoder.coroutines_rxjava
+package me.bzcoder.coroutines_rxjava.entity
 
 
 import com.google.gson.annotations.SerializedName
@@ -16,7 +16,7 @@ data class ProjectTypeEntity(
         @SerializedName("courseId")
         val courseId: Int, // 13
         @SerializedName("id")
-        val id: Int, // 294
+        val id: String, // 294
         @SerializedName("name")
         val name: String, // 完整项目
         @SerializedName("order")
