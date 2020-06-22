@@ -36,7 +36,6 @@ class MainViewModel : ViewModel() {
     var successData = MutableLiveData<List<ProjectTypeEntity.Data>>()
     var successData2 = MutableLiveData<List<ProjectListEntity.Data.Data>>()
 
-    var count = AtomicInteger(0)
     private val projectList: Observable<ProjectTypeEntity> by lazy {
         RetrofitFactoryForRxjava2.instance
             .create(ListApiForRxjava2::class.java)
@@ -67,18 +66,16 @@ class MainViewModel : ViewModel() {
     fun coroutinesLoadListDataDetail() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val data1 = async {
+                val data1 =
                     RetrofitFactoryForCoroutines.instance
                         .create(ListApiForCoroutines::class.java)
                         .getProjectList().data
-                }
-                val data2 = async {
+                val data2 =
                     RetrofitFactoryForCoroutines.instance
                         .create(ListApiForCoroutines::class.java)
-                        .getProjectListDetail(1, data1.await()[0].id)
-                }
+                        .getProjectListDetail(1, data1[0].id)
                 withContext(Dispatchers.Main) {
-                    successData2.value = data2.await().data.datas
+                    successData2.value = data2.data.datas
                 }
             }
         }
