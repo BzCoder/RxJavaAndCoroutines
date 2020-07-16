@@ -1,30 +1,25 @@
 package me.bzcoder.coroutines_rxjava.vm
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import io.reactivex.Observable
-import io.reactivex.ObservableSource
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.BiFunction
-import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
-import io.reactivex.schedulers.Schedulers.from
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import me.bzcoder.coroutines_rxjava.entity.ProjectTypeEntity
 import me.bzcoder.coroutines_rxjava.coroutines.ListApiForCoroutines
 import me.bzcoder.coroutines_rxjava.coroutines.RetrofitFactoryForCoroutines
 import me.bzcoder.coroutines_rxjava.entity.ProjectListEntity
+import me.bzcoder.coroutines_rxjava.entity.ProjectTypeEntity
 import me.bzcoder.coroutines_rxjava.rxjava.ListApiForRxjava2
 import me.bzcoder.coroutines_rxjava.rxjava.RetrofitFactoryForRxjava2
-import java.util.concurrent.atomic.AtomicInteger
 
 
 /**
